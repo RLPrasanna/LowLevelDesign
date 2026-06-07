@@ -1,1 +1,1 @@
-﻿Console.WriteLine("Hello, World!");
+﻿TicTacToe.Client.Main(args);
