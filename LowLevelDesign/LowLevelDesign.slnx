@@ -1,4 +1,4 @@
 <Solution>
-  <Project Path="ParkingLot/ParkingLot.csproj" Id="7d318b01-f5b1-4d78-8128-119e2c5fa489" />
+  <Project Path="ParkingLot/ParkingLotManagement.csproj" Id="7d318b01-f5b1-4d78-8128-119e2c5fa489" />
   <Project Path="TicTacToe/TicTacToe.csproj" />
 </Solution>

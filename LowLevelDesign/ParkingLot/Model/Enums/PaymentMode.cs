@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace ParkingLot.Model.Enums
+namespace ParkingLotManagement.Model.Enums
 {
     internal enum PaymentMode
     {

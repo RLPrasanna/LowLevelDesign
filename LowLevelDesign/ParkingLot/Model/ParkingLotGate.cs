@@ -1,9 +1,9 @@
-﻿using ParkingLot.Model.Enums;
+﻿using ParkingLotManagement.Model.Enums;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace ParkingLot.Model
+namespace ParkingLotManagement.Model
 {
     internal class ParkingLotGate : BaseModel
     {

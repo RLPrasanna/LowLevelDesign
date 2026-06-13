@@ -4,10 +4,9 @@ using System.Text;
 
 namespace ParkingLotManagement.Model.Enums
 {
-    internal enum ParkingLotStatus
+    internal enum FeeCalculatorStrategyType
     {
-        Open,
-        Closed,
-        Full
+        Dynamic,
+        Static
     }
 }

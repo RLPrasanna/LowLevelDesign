@@ -2,18 +2,18 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace ParkingLot.Model
+namespace ParkingLotManagement.Model
 {
     internal class Ticket : BaseModel
     {
         public string Number { get; set; }
-        public DateOnly EntryTime { get; set; }
+        public DateTime EntryTime { get; set; }
         public Vehicle Vehicle { get; set; }
         public ParkingSpot AssignedSpot { get; set; }
         public ParkingLotGate GeneratedAt { get; set; }
         public Operator GeneratedBy { get; set; } // Optional to keep GeneratedBy here
 
-        public Ticket(string number, DateOnly entryTime, Vehicle vehicle, ParkingSpot parkingSpot, ParkingLotGate generatedAt, Operator generatedBy)
+        public Ticket(string number, DateTime entryTime, Vehicle vehicle, ParkingSpot parkingSpot, ParkingLotGate generatedAt, Operator generatedBy)
         {
             this.Number = number;
             this.EntryTime = entryTime;

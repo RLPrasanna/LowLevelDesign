@@ -4,10 +4,10 @@ using System.Text;
 
 namespace ParkingLotManagement.Model.Enums
 {
-    internal enum ParkingLotStatus
+    internal enum SpotAssignmentStrategyType
     {
-        Open,
-        Closed,
-        Full
+        Random,
+        Manual,
+        Assign_First_Empty
     }
 }

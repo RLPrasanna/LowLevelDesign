@@ -1,13 +1,13 @@
-﻿using ParkingLot.Model.Enums;
+﻿using ParkingLotManagement.Model.Enums;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace ParkingLot.Model
+namespace ParkingLotManagement.Model
 {
     internal class Bill : BaseModel
     {
-        public DateOnly ExitTime { get; set; }
+        public DateTime ExitTime { get; set; }
         public int Amount { get; set; }
         public Ticket Ticket { get; set; }
         public ParkingLotGate Gate { get; set; }

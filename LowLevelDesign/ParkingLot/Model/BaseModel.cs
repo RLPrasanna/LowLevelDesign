@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace ParkingLot.Model
+namespace ParkingLotManagement.Model
 {
     internal class BaseModel
     {

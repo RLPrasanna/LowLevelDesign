@@ -1,9 +1,9 @@
-﻿using ParkingLot.Model.Enums;
+﻿using ParkingLotManagement.Model.Enums;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace ParkingLot.Model
+namespace ParkingLotManagement.Model
 {
     internal class ParkingLot : BaseModel
     {
@@ -11,5 +11,18 @@ namespace ParkingLot.Model
         public List<ParkingLotGate> ParkingLotGates { get; set; }
         public ParkingLotStatus ParkingLotStatus { get; set; }
 
+        public SpotAssignmentStrategyType SpotAssignmentStrategyType { get; set; }
+        public FeeCalculatorStrategyType FeeCalculatorStrategyType { get; set; }
+
+        public ParkingLot(List<ParkingFloor> parkingFloors, List<ParkingLotGate> parkingLotGates, 
+            ParkingLotStatus parkingLotStatus, SpotAssignmentStrategyType spotAssignmentStrategyType,
+            FeeCalculatorStrategyType feeCalculatorStrategyType)
+        {
+            this.ParkingFloors = parkingFloors;
+            this.ParkingLotGates = parkingLotGates;
+            this.ParkingLotStatus = parkingLotStatus;
+            this.SpotAssignmentStrategyType = spotAssignmentStrategyType;
+            this.FeeCalculatorStrategyType = feeCalculatorStrategyType;
+        }
     }
 }

@@ -1,1 +1,1 @@
-﻿Console.WriteLine("Hello, World!");
+﻿ParkingLotManagement.Client.Main(args);
