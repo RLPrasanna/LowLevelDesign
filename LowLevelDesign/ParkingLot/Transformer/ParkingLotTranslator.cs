@@ -24,7 +24,7 @@ namespace ParkingLotManagement.Transformer
             List<ParkingLotGate> response = [];
             foreach(var gate in gates)
             {
-                ParkingLotGate parkingLotGate = new ParkingLotGate(gate.GateType, gate.CurrentOperator, gate.Status);
+                ParkingLotGate parkingLotGate = new ParkingLotGate(gate.GateType, gate.GateNumber, gate.CurrentOperator, gate.Status);
                 response.Add(parkingLotGate);
             }
             return response;

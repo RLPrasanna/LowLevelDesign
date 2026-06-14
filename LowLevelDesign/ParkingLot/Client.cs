@@ -78,7 +78,7 @@ namespace ParkingLotManagement
         private static List<ParkingFloorDTO> createParkingFloor()
         {
             List<ParkingSpot> parkingSpots = [];
-            parkingSpots.Add(new Model.ParkingSpot("1", [VehicleType.Four_Wheeler]));
+            parkingSpots.Add(new ParkingSpot("1", [VehicleType.Four_Wheeler]));
             return [new ParkingFloorDTO(parkingSpots, "F1")];
         }
 
