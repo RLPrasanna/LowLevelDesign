@@ -22,18 +22,24 @@ namespace ParkingLotManagement
             ParkingLotRepository parkingLotRepository = new ParkingLotRepository();
             ParkingSpotRepository parkingSpotRepository = new ParkingSpotRepository();
             ParkingLotGateRepository parkingLotGateRepository = new ParkingLotGateRepository();
+            TicketRepository ticketRepository = new TicketRepository();
 
             // Created Services
             ParkingLotService parkingLotService = new ParkingLotService(parkingLotRepository, parkingFloorRepository, parkingLotGateRepository, parkingSpotRepository);
+            TicketService ticketService = new TicketService(ticketRepository, parkingLotRepository, parkingLotGateRepository);
 
             // Created Controller
             ParkingLotController parkingLotController = new ParkingLotController(parkingLotService);
+            TicketController ticketController = new TicketController(ticketService);
 
 
             // Call the Controller method
             parkingLotController.CreateParkingLot(createNewParkingLot());
-            Console.WriteLine("ParkingLot is created.");
+            Console.WriteLine("ParkingLot is created. Now Generating Ticket: ");
 
+            TicketResponseDTO ticketResponseDTO = ticketController.GenerateTicket(
+                                                        new GenerateTicketDTO(1, 1, new Vehicle("KA-01-HH-1234", VehicleType.Four_Wheeler)));
+            Console.WriteLine("Ticket Number: " + ticketResponseDTO.Number);
         }
 
 
