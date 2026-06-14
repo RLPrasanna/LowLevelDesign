@@ -27,10 +27,12 @@ namespace ParkingLotManagement
             // Created Services
             ParkingLotService parkingLotService = new ParkingLotService(parkingLotRepository, parkingFloorRepository, parkingLotGateRepository, parkingSpotRepository);
             TicketService ticketService = new TicketService(ticketRepository, parkingLotRepository, parkingLotGateRepository);
+            BillService billService = new BillService(ticketRepository, parkingLotGateRepository, parkingLotRepository);
 
             // Created Controller
             ParkingLotController parkingLotController = new ParkingLotController(parkingLotService);
             TicketController ticketController = new TicketController(ticketService);
+            BillController billController = new BillController(billService);
 
 
             // Call the Controller method
@@ -40,6 +42,25 @@ namespace ParkingLotManagement
             TicketResponseDTO ticketResponseDTO = ticketController.GenerateTicket(
                                                         new GenerateTicketDTO(1, 1, new Vehicle("KA-01-HH-1234", VehicleType.Four_Wheeler)));
             Console.WriteLine("Ticket Number: " + ticketResponseDTO.Number);
+
+            Console.WriteLine("\nSimulating Car leaving after some time (Generating Bill): ");
+            // In reality, this would be an exit gate. Using gateId=1 for simplicity.
+            BillResponseDTO billResponseDTO = billController.GenerateBill(new BillRequestDTO
+            {
+                TicketNumber = ticketResponseDTO.Number,
+                GateId = 1
+            });
+
+            if (billResponseDTO.ResponseStatus == ResponseStatus.SUCCESS)
+            {
+                Console.WriteLine("Bill Generated Successfully.");
+                Console.WriteLine($"Exit Time: {billResponseDTO.Bill.ExitTime}");
+                Console.WriteLine($"Amount to Pay: Rs {billResponseDTO.Bill.Amount}");
+            }
+            else
+            {
+                Console.WriteLine("Failed to generate bill: " + billResponseDTO.FailureMessage);
+            }
         }
 
 

@@ -32,5 +32,20 @@ namespace ParkingLotManagement.Repository
             return parkingLotRepository[id];
 
         }
+
+        public ParkingLot GetParkingLotByGateId(long gateId)
+        {
+            foreach (var parkingLot in parkingLotRepository.Values)
+            {
+                foreach (var gate in parkingLot.ParkingLotGates)
+                {
+                    if (gate.Id == gateId)
+                    {
+                        return parkingLot;
+                    }
+                }
+            }
+            return null;
+        }
     }
 }

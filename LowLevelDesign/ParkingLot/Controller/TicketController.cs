@@ -1,8 +1,5 @@
 ﻿using ParkingLotManagement.DTO;
 using ParkingLotManagement.Service;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace ParkingLotManagement.Controller
 {
@@ -24,10 +21,26 @@ namespace ParkingLotManagement.Controller
                 throw new ArgumentException("Invalid input for generating ticket.");
             }
 
-            string ticketNumber = this._ticketService.GenerateTicket(generateTicketDTO.GateId, generateTicketDTO.ParkingLotId, generateTicketDTO.Vehicle);
+            try
+            {
+                string ticketNumber = this._ticketService.GenerateTicket(generateTicketDTO.GateId, generateTicketDTO.ParkingLotId, generateTicketDTO.Vehicle);
 
-            return new TicketResponseDTO(ticketNumber);
+                return new TicketResponseDTO
+                {
+                    ResponseStatus = Model.Enums.ResponseStatus.SUCCESS,
+                    Number = ticketNumber
+                };
+            }
+            catch (Exception ex)
+            {
+                return new TicketResponseDTO
+                {
+                    ResponseStatus = Model.Enums.ResponseStatus.FAILURE,
+                    FailureMessage = ex.Message
+                };
+            }
         }
+
 
         private bool ValidateGenerateTicketDTO(GenerateTicketDTO dto)
         {

@@ -32,5 +32,17 @@ namespace ParkingLotManagement.Repository
             return ticketRepository[id];
 
         }
+
+        public Ticket GetTicketByNumber(string ticketNumber)
+        {
+            foreach (var ticket in ticketRepository.Values)
+            {
+                if (ticket.Number == ticketNumber)
+                {
+                    return ticket;
+                }
+            }
+            return null;
+        }
     }
 }
