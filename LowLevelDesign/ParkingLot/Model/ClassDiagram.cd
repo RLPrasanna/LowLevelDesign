@@ -1,0 +1,144 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="ParkingLotManagement.Model.BaseModel" Collapsed="true">
+    <Position X="10.25" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAACAAAACAAAAAAAAAAAAAAAAAAAQAAAAE=</HashCode>
+      <FileName>Model\BaseModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ParkingLotManagement.Model.Bill">
+    <Position X="3.5" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAIAABAAAACAAAAAACCAAgAAAEAAAAAAAACAAA=</HashCode>
+      <FileName>Model\Bill.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ParkingLotManagement.Model.Operator">
+    <Position X="8" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAACQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\Operator.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ParkingLotManagement.Model.ParkingFloor">
+    <Position X="12.5" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAQAAAAA=</HashCode>
+      <FileName>Model\ParkingFloor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ParkingLotManagement.Model.ParkingLot">
+    <Position X="17" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAQAAAAAIAAAAAAAAAAAAABAAIAAABAAAAAAAAAAA=</HashCode>
+      <FileName>Model\ParkingLot.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ParkingLotManagement.Model.ParkingLotGate">
+    <Position X="1.25" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEAAAAAAAAAAAAAAEAEAAAAAAAAQAAAAAAAAA=</HashCode>
+      <FileName>Model\ParkingLotGate.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ParkingLotManagement.Model.ParkingSpot">
+    <Position X="5.75" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAACBAAAAAAAAAACAAAAAAAAAAA=</HashCode>
+      <FileName>Model\ParkingSpot.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ParkingLotManagement.Model.Payment">
+    <Position X="10.25" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAACAAAAAAAACAAAAAAAAAAAAAAAAAIQA=</HashCode>
+      <FileName>Model\Payment.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ParkingLotManagement.Model.Ticket">
+    <Position X="14.75" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAEAAAAACBAAABAAAAAAAhAAAAAA=</HashCode>
+      <FileName>Model\Ticket.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ParkingLotManagement.Model.Vehicle">
+    <Position X="19.25" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAACAAA=</HashCode>
+      <FileName>Model\Vehicle.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="ParkingLotManagement.Model.Enums.BillStatus" Collapsed="true">
+    <Position X="7.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgAAAAIAAAAAAAAAAAAAACAAAAAAAAAAA=</HashCode>
+      <FileName>Model\Enums\BillStatus.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="ParkingLotManagement.Model.Enums.FeeCalculatorStrategyType" Collapsed="true">
+    <Position X="9.25" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAABAAAAAAAAAAAAAAAEAAAAAAAAAAA=</HashCode>
+      <FileName>Model\Enums\FeeCalculatorStrategyType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="ParkingLotManagement.Model.Enums.GateStatus" Collapsed="true">
+    <Position X="11" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAACAAAA=</HashCode>
+      <FileName>Model\Enums\GateStatus.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="ParkingLotManagement.Model.Enums.GateType" Collapsed="true">
+    <Position X="12.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAA=</HashCode>
+      <FileName>Model\Enums\GateType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="ParkingLotManagement.Model.Enums.ParkingLotStatus" Collapsed="true">
+    <Position X="7.5" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAgAAAACAAAA=</HashCode>
+      <FileName>Model\Enums\ParkingLotStatus.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="ParkingLotManagement.Model.Enums.ParkingSpotStatus" Collapsed="true">
+    <Position X="9.25" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAEAAAAAAAAAIAAAAAAAAAAAgAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\Enums\ParkingSpotStatus.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="ParkingLotManagement.Model.Enums.PaymentMode" Collapsed="true">
+    <Position X="11" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAQAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\Enums\PaymentMode.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="ParkingLotManagement.Model.Enums.ResponseStatus" Collapsed="true">
+    <Position X="12.75" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\Enums\ResponseStatus.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="ParkingLotManagement.Model.Enums.SpotAssignmentStrategyType" Collapsed="true">
+    <Position X="7.5" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAQAAAAAAAAAAAAAAAAAEABAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\Enums\SpotAssignmentStrategyType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="ParkingLotManagement.Model.Enums.VehicleType" Collapsed="true">
+    <Position X="9.25" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAQAAAAAAAAAAAAAAAAAAIQAAAAAAAAAAQAAAAA=</HashCode>
+      <FileName>Model\Enums\VehicleType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
