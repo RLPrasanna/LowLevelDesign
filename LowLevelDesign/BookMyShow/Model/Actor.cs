@@ -4,7 +4,8 @@ using System.Text;
 
 namespace BookMyShow.Model
 {
-    internal class Actor
+    internal class Actor : BaseModel
     {
+        public string Name { get; set; }
     }
 }

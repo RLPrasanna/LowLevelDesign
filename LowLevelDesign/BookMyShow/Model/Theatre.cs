@@ -4,7 +4,10 @@ using System.Text;
 
 namespace BookMyShow.Model
 {
-    internal class Theatre
+    internal class Theatre : BaseModel
     {
+        public string Name { get; set; }
+        public City City { get; set; }
+        public List<Screen> Screens { get; set; }
     }
 }
