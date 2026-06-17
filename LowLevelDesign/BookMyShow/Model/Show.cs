@@ -5,7 +5,7 @@ using System.Text;
 
 namespace BookMyShow.Model
 {
-    internal class Show : BaseModel
+    public class Show : BaseModel
     {
         public Movie Movie { get; set; }
         public DateTime StartTime { get; set; }

@@ -4,7 +4,7 @@ using System.Text;
 
 namespace BookMyShow.Model
 {
-    internal class Theatre : BaseModel
+    public class Theatre : BaseModel
     {
         public string Name { get; set; }
         public City City { get; set; }

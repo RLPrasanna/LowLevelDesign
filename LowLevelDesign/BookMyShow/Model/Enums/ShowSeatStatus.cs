@@ -4,7 +4,7 @@ using System.Text;
 
 namespace BookMyShow.Model.Enums
 {
-    internal enum ShowSeatStatus
+    public enum ShowSeatStatus
     {
         Booked,
         Available,

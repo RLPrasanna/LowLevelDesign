@@ -5,7 +5,7 @@ using System.Text;
 
 namespace BookMyShow.Model
 {
-    internal class Movie : BaseModel
+    public class Movie : BaseModel
     {
         public string Name { get; set; }
         public string Rating { get; set; }

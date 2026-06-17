@@ -5,7 +5,7 @@ using System.Text;
 
 namespace BookMyShow.Model
 {
-    internal class ShowSeat : BaseModel
+    public class ShowSeat : BaseModel
     {
         public Show Show { get; set; }
         public Seat Seat { get; set; }

@@ -5,10 +5,11 @@ using System.Text;
 
 namespace BookMyShow.Model
 {
-    internal class Seat : BaseModel
+    public class Seat : BaseModel
     {
         public string SeatNumber { get; set; }
-        public List<Seat> Seats { get; set; }
-        public List<Feature> Features { get; set; }
+        public int RowNo { get; set; }
+        public int ColNo { get; set; }
+        public SeatType SeatType { get; set; }
     }
 }

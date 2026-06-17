@@ -5,7 +5,7 @@ using System.Text;
 
 namespace BookMyShow.Model
 {
-    internal class Payment : BaseModel
+    public class Payment : BaseModel
     {
         public string ExternalId { get; set; }
         public double totalAmount { get; set; }

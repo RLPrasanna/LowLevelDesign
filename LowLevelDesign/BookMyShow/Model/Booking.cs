@@ -5,7 +5,7 @@ using System.Text;
 
 namespace BookMyShow.Model
 {
-    internal class Booking : BaseModel
+    public class Booking : BaseModel
     {
         public BookingStatus BookingStatus { get; set; }
         public Show Show { get; set; }
@@ -13,7 +13,13 @@ namespace BookMyShow.Model
         public List<ShowSeat> ShowSeats { get; set; }
         public Payment Payment { get; set; }
         public double TotalAmount { get; set; }
+
+        // Foreign Keys
+        //public int CreatedById { get; set; }
+        //public int ShowId { get; set; }
+        //public int? PaymentId { get; set; }
     }
 }
 
 
+ 
