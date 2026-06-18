@@ -1,0 +1,130 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="BookMyShow.Model.Actor">
+    <Position X="5.25" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\Actor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BookMyShow.Model.BaseModel" Collapsed="true">
+    <Position X="12" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAACAAAACAAAAAAAAAAAAAAAAAAAQAAAAA=</HashCode>
+      <FileName>Model\BaseModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BookMyShow.Model.Booking">
+    <Position X="16.5" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAAAAAAAAQAAAAAKAAAAAAAAAEAAAAAAAAAAAAAAE=</HashCode>
+      <FileName>Model\Booking.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BookMyShow.Model.City">
+    <Position X="21" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\City.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BookMyShow.Model.Movie">
+    <Position X="0.75" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAACAACgAAAAAABAAQAAAAAAAEAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\Movie.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BookMyShow.Model.Payment">
+    <Position X="7.5" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAEAAQEAAAAAAAAAIAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\Payment.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BookMyShow.Model.Screen">
+    <Position X="12" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAgABAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\Screen.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BookMyShow.Model.Seat">
+    <Position X="18.75" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAAAAIAAAAAAAAAAAABAAAIAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\Seat.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BookMyShow.Model.Show">
+    <Position X="23.25" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAEAAABAABAAAAIAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\Show.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BookMyShow.Model.ShowSeat">
+    <Position X="3" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAACAAAAQAAAAAAEAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\ShowSeat.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BookMyShow.Model.Theatre">
+    <Position X="9.75" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAIAAAAAAQAAAAAAAAAAIAAAAAAAAA=</HashCode>
+      <FileName>Model\Theatre.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BookMyShow.Model.User">
+    <Position X="14.25" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAA=</HashCode>
+      <FileName>Model\User.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="BookMyShow.Model.Enums.BookingStatus" Collapsed="true">
+    <Position X="25.75" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAgABAAAAA=</HashCode>
+      <FileName>Model\Enums\BookingStatus.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="BookMyShow.Model.Enums.Feature" Collapsed="true">
+    <Position X="27.5" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAgAA=</HashCode>
+      <FileName>Model\Enums\Feature.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="BookMyShow.Model.Enums.PaymentStatus" Collapsed="true">
+    <Position X="29.25" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAIAAAgAAAAAAABAAABAAAAA=</HashCode>
+      <FileName>Model\Enums\PaymentStatus.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="BookMyShow.Model.Enums.PaymentType" Collapsed="true">
+    <Position X="25.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAQgAAAAAAAAAQAAAAAAACIAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\Enums\PaymentType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="BookMyShow.Model.Enums.SeatType" Collapsed="true">
+    <Position X="27.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAE=</HashCode>
+      <FileName>Model\Enums\SeatType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="BookMyShow.Model.Enums.ShowSeatStatus" Collapsed="true">
+    <Position X="29.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAgAAAAAAAAAACAAABAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\Enums\ShowSeatStatus.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
