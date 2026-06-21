@@ -11,7 +11,12 @@ namespace BookMyShow.Controller
     [Route("[controller]")]
     public class BookingController : ControllerBase
     {
-        private BookingService bookingService;
+        private readonly BookingService bookingService;
+
+        public BookingController(BookingService bookingService)
+        {
+            this.bookingService = bookingService;
+        }
 
         [HttpPost("ticket")]
         public CreateBookingResponseDTO BookTicket([FromBody] CreateBookingRequestDTO requestDTO)
@@ -25,8 +30,17 @@ namespace BookMyShow.Controller
             return BookingTranslator.transform(booking, requestDTO);
         }
 
-
-
+        [HttpGet("ticket/{id}")]
+        public ActionResult<TicketDTO> GetTicket(long id)
+        {
+            var ticket = new TicketDTO
+            {
+                CreatedBy=null,
+                TicketId=id,
+                TotalAmount=1000
+            };
+            return Ok(ticket);
+        }
 
         #region private methods
         private bool IsInvalidRequest(CreateBookingRequestDTO request)

@@ -2,15 +2,32 @@
 using BookMyShow.Model;
 using BookMyShow.Model.Enums;
 using BookMyShow.Repository;
-using Microsoft.AspNetCore.Identity;
+using BookMyShow.Data;
 
 namespace BookMyShow.Service
 {
     public class BookingService
     {
-        private BookingRepository bookingRepository;
-        private UserRepository userRepository;
-        private ShowRepository showRepository;
+        private static readonly object bookingLock = new();
+        private readonly AppDBContext dbContext;
+        private readonly IBookingRepository bookingRepository;
+        private readonly IUserReository userRepository;
+        private readonly IShowRepository showRepository;
+        private readonly IShowSeatRepository showSeatRepository;
+
+        public BookingService(
+            AppDBContext dbContext,
+            IBookingRepository bookingRepository,
+            IUserReository userRepository,
+            IShowRepository showRepository,
+            IShowSeatRepository showSeatRepository)
+        {
+            this.dbContext = dbContext;
+            this.bookingRepository = bookingRepository;
+            this.userRepository = userRepository;
+            this.showRepository = showRepository;
+            this.showSeatRepository = showSeatRepository;
+        }
 
         /*
          * This method will handle the booking process, including:
@@ -25,27 +42,86 @@ namespace BookMyShow.Service
          */
         public Booking CreateBooking(List<string> seatNumbers, long showId, long userId)
         {
-            Show show = showRepository.GetById(showId);
-            if (show == null)
+            using var transaction = dbContext.Database.BeginTransaction();
+            try
             {
-                throw new InvalidRequestException("ShowId is not correct! ");
+                Show show = showRepository.GetById(showId);
+                if (show == null)
+                {
+                    throw new InvalidRequestException("ShowId is not correct! ");
+                }
+
+                User user = userRepository.GetById(userId);
+                if (user == null)
+                {
+                    throw new InvalidRequestException("UserId is not correct! ");
+                }
+
+                List<ShowSeat> lockedSeats;
+
+                lock (bookingLock)
+                {
+                    List<ShowSeat> allShowSeats = showSeatRepository.GetByShowId(showId);
+                    // [1,2,3,4,5,6,7,8,9,10]
+
+                    foreach (var showseat in allShowSeats)
+                    {
+                        // [2,3,4]
+                        if (seatNumbers.Contains(showseat.Seat.SeatNumber) && showseat.ShowSeatStatus != ShowSeatStatus.Available)
+                        {
+                            throw new SeatNotAvailableException("Seats are not available! " + showseat.Seat.SeatNumber);
+                        }
+                    }
+
+                    Console.WriteLine("Fetched all show seats: " + allShowSeats.Count);
+
+                    lockedSeats = [];
+
+                    foreach (var showseat in allShowSeats)
+                    {
+                        if (seatNumbers.Contains(showseat.Seat.SeatNumber))
+                        {
+                            showseat.ShowSeatStatus = ShowSeatStatus.Locked;
+                            showSeatRepository.Update(showseat);
+                            lockedSeats.Add(showseat);
+                        }
+                    }
+
+                    Booking booking = new Booking
+                    {
+                        BookingStatus = BookingStatus.InProgress,
+                        CreatedBy = user,
+                        Show = show,
+                        ShowSeats = lockedSeats,
+                        TotalAmount = calculateTotalAmount(lockedSeats)
+                    };
+
+                    bookingRepository.Add(booking);
+                    bookingRepository.SaveChanges();
+
+                    transaction.Commit();
+
+                    return booking;
+                }
+            }
+            catch
+            {
+                transaction.Rollback();
+                throw;
+            }
+        }
+
+        private double calculateTotalAmount(List<ShowSeat> lockedSeats)
+        {
+            double totalAmount = 0;
+            var seatTypePrices = showSeatRepository.GetSeatTypePrices(lockedSeats.Select(x => x.Seat.SeatType).ToList());
+
+            foreach (var seatTypePrice in seatTypePrices)
+            {
+                totalAmount += seatTypePrice.Value * lockedSeats.Count(x => x.Seat.SeatType == seatTypePrice.Key);
             }
 
-            User user = userRepository.GetById(userId);
-            if (user == null)
-            {
-                throw new InvalidRequestException("UserId is not correct! ");
-            }
-
-            Booking booking = new Booking();
-            booking.BookingStatus = BookingStatus.InProgress;
-            booking.CreatedBy = user;
-            booking.Show = show;
-            booking.ShowSeats = null;
-
-            bookingRepository.Add(booking);
-
-            return booking;
+            return totalAmount;
         }
     }
 }

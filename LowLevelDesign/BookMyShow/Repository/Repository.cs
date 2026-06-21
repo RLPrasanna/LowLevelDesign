@@ -47,6 +47,11 @@ namespace BookMyShow.Repository
             _dbSet.RemoveRange(entity);
         }
 
+        public void SaveChanges()
+        {
+            _context.SaveChanges();
+        }
+
         public void Update(T entity)
         {
             _dbSet.Update(entity);
