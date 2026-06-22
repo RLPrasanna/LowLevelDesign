@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace BookMyShow.Controller
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("api/[controller]")]
     public class BookingController : ControllerBase
     {
         private readonly BookingService bookingService;

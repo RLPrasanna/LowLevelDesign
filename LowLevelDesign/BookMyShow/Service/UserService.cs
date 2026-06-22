@@ -8,6 +8,7 @@ namespace BookMyShow.Service
     public class UserService
     {
         private IUserReository _userRepository;
+        private readonly PasswordHasher<User> _passwordHasher = new PasswordHasher<User>();
 
         public UserService(IUserReository userRepository)
         {
@@ -23,12 +24,21 @@ namespace BookMyShow.Service
 
             var userToBeSaved = new User
             {
-                Email = email,
-                Password = password // Note: In reality, never store plain text passwords
+                Email = email
             };
+            userToBeSaved.Password = _passwordHasher.HashPassword(userToBeSaved, password);
 
             var userCreated=_userRepository.Add(userToBeSaved);
             return userCreated;
+        }
+
+        public bool Login(string email, string password)
+        {
+            var user=_userRepository.GetAll().FirstOrDefault(u => u.Email == email);
+            if (user == null) return false;
+
+            var result=_passwordHasher.VerifyHashedPassword(user, user.Password, password);
+            return result==PasswordVerificationResult.Success;
         }
     }
 }

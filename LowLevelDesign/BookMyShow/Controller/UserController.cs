@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace BookMyShow.Controller
 {
     [ApiController]
+    [Route("api/[controller]")]
     public class UserController : ControllerBase
     {
         private readonly UserService userService;
@@ -16,6 +17,7 @@ namespace BookMyShow.Controller
             this.userService = userService;
         }
         [HttpPost]
+        [Route("")]
         public ActionResult<UserRequestDTO> CreateUser([FromBody] UserRequestDTO userRequestDTO)
         {
             UserRequestDTO response=new UserRequestDTO();
@@ -37,6 +39,13 @@ namespace BookMyShow.Controller
             response.UserEmail = createdUser.Email;
             response.Password = createdUser.Password;
             return Ok(response);
+        }
+
+        [HttpPost]
+        [Route("login")]
+        public bool Login([FromBody] UserRequestDTO userRequestDTO)
+        {
+            return userService.Login(userRequestDTO.UserEmail,userRequestDTO.Password);
         }
     }
 }

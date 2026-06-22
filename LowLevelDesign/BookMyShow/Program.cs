@@ -18,6 +18,7 @@ builder.Services.AddScoped<IShowSeatRepository, ShowSeatRepository>();
 builder.Services.AddScoped<IShowRepository, ShowRepository>();
 builder.Services.AddScoped<IUserReository, UserRepository>();
 builder.Services.AddScoped<BookingService>();
+builder.Services.AddScoped<UserService>();
 
 var app=builder.Build();
 
