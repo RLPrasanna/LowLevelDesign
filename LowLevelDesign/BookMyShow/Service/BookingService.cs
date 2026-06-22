@@ -93,11 +93,11 @@ namespace BookMyShow.Service
                         CreatedBy = user,
                         Show = show,
                         ShowSeats = lockedSeats,
-                        TotalAmount = calculateTotalAmount(lockedSeats)
+                        TotalAmount = calculateTotalAmount(lockedSeats),
+                        Payment = null //Todo: Create Payment object and add it here
                     };
 
                     bookingRepository.Add(booking);
-                    bookingRepository.SaveChanges();
 
                     transaction.Commit();
 

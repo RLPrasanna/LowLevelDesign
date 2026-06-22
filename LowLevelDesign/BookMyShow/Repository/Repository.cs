@@ -14,9 +14,11 @@ namespace BookMyShow.Repository
             _context = dbContext;
             _dbSet = dbContext.Set<T>();
         }
-        public void Add(T entity)
+        public T Add(T entity)
         {
             _dbSet.Add(entity);
+            _context.SaveChanges();
+            return entity;
         }
 
         public IEnumerable<T> GetAll()
@@ -52,9 +54,11 @@ namespace BookMyShow.Repository
             _context.SaveChanges();
         }
 
-        public void Update(T entity)
+        public T Update(T entity)
         {
             _dbSet.Update(entity);
+            _context.SaveChanges();
+            return entity;
         }
     }
 }

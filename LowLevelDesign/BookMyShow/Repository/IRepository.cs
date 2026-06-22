@@ -7,8 +7,8 @@ namespace BookMyShow.Repository
         T GetFirstorDefault(Expression<Func<T, bool>> filter);
         IEnumerable<T> GetAll();
         T GetById(long id);
-        void Add(T entity);
-        void Update(T entity);
+        T Add(T entity);
+        T Update(T entity);
         void Remove(T entity);
         void RemoveRange(IEnumerable<T> entity);
         void SaveChanges();
