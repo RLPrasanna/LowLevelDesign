@@ -1,5 +1,6 @@
 <Solution>
   <Project Path="BookMyShow/BookMyShow.csproj" Id="3095827f-1622-43c9-a58a-a7b3d1de6623" />
   <Project Path="ParkingLot/ParkingLotManagement.csproj" Id="7d318b01-f5b1-4d78-8128-119e2c5fa489" />
+  <Project Path="Splitwise/Splitwise.csproj" Id="120ca643-9c66-4f87-b08f-87eac6b668dc" />
   <Project Path="TicTacToe/TicTacToe.csproj" />
 </Solution>
