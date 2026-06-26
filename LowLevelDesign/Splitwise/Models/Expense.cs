@@ -8,5 +8,6 @@ namespace Splitwise.Models
         public double Amount { get; set; }
         public ExpenseType ExpenseType { get; set; }
         public List<UserExpense> UserExpenses { get; set; }
+        public User ExpenseCreatedBy { get; set; }
     }
 }
