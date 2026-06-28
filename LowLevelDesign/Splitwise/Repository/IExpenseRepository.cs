@@ -1,6 +1,8 @@
-﻿namespace Splitwise.Repository
+﻿using Splitwise.Models;
+
+namespace Splitwise.Repository
 {
-    public interface IExpenseRepository
+    public interface IExpenseRepository : IRepository<Expense>
     {
 
     }

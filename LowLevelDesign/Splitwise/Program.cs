@@ -1,3 +1,8 @@
+using Splitwise;
+using Microsoft.EntityFrameworkCore;
+using Splitwise.Repository;
+using Splitwise.Service;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -5,6 +10,15 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
+
+// Using In-Memory Database for demonstration purposes. In production, you would typically use a real database like SQL Server, PostgreSQL, etc.
+//builder.Services.AddDbContext<AppDBContext>(options => options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+builder.Services.AddScoped<IExpenseRepository, ExpenseRepository>();
+builder.Services.AddScoped<IUserExpenseRepository, UserExpenseRepository>();
+builder.Services.AddScoped<IUserRepository, UserRepository>();
+
+builder.Services.AddScoped<IExpenseService,ExpenseService>();
 
 var app = builder.Build();
 

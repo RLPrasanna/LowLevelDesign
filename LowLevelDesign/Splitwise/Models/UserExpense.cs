@@ -2,7 +2,7 @@
 
 namespace Splitwise.Models
 {
-    public class UserExpense  :BaseModel
+    public class UserExpense : BaseModel
     {
         public Expense Expense { get; set; }
         public User User { get; set; }

@@ -2,7 +2,7 @@
 
 namespace Splitwise.Repository
 {
-    public interface IUserRepository : IRepository<User>
+    public interface IGroupRepository : IRepository<Group>
     {
     }
 }
