@@ -13,6 +13,8 @@ builder.Services.AddOpenApi();
 
 // Using In-Memory Database for demonstration purposes. In production, you would typically use a real database like SQL Server, PostgreSQL, etc.
 //builder.Services.AddDbContext<AppDBContext>(options => options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
+builder.Services.AddDbContext<AppDBContext>(options =>
+    options.UseInMemoryDatabase("SplitwiseDB"));
 
 builder.Services.AddScoped<IExpenseRepository, ExpenseRepository>();
 builder.Services.AddScoped<IUserExpenseRepository, UserExpenseRepository>();
